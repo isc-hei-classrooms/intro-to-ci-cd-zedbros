@@ -12,4 +12,6 @@ jobs:
   test:
     runs-on: ubuntu-latest # OS on which to run the code (ubuntu is the most common)
     steps:
+      - uses: actions/checkout@v3
+      - run: make
       - run: make test
