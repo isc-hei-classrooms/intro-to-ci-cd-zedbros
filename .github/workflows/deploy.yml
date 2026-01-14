@@ -15,7 +15,7 @@ jobs:
                 make test
                 make release
             - name: Release
-              uses: softprops/actions-gh-realease@v2
+              uses: softprops/actions-gh-release@v2
               with:
                 files: |
                     LICENSE
