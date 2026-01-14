@@ -18,9 +18,6 @@ jobs:
                 make
                 make test
                 make release
-    cd:
-        runs-on: ubuntu-latest
-        steps:
             - name: Release
               uses: softprops/action-gh-release@v2
               with:
