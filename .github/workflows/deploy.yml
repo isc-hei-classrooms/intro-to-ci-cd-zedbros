@@ -1,17 +1,22 @@
 name: Test CD dummyDB Push and Pull Request
 on: 
-    release
+    release:
+        types: created
+
 jobs:
     ci:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v6
-            - run: make
-            - run: make test
-
-
-    deploy:
-        runs-on: ubuntu-latest
-        steps:
-            - run: g++ -o mainBinaryFile main.cpp
-            
+            - name: Checkout
+              uses: actions/checkout@v6
+            - name: Run
+              run: |
+                make
+                make test
+                make release
+            - name: Release
+              uses: softprops/actions-gh-realease@v2
+              with:
+                files: |
+                    LICENSE
+                    ./build/main
