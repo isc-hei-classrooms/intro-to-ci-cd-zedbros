@@ -12,7 +12,5 @@ jobs:
   test:
     runs-on: ubuntu-latest # OS on which to run the code (ubuntu is the most common)
     steps:
-      - uses: actions/checkout@v3 # adds code to virtual env
-      - run: npm ci # verifies that all the dependencies for our code have been installed
-      - run: npm test # runs our project using any library of our choice
-      - run: npm build # compiles our project
+      - run: make
+      - run: make test
