@@ -65,4 +65,7 @@ make test
 
 ## CI/CD
 
-TO BE COMPLETED 
+In order to deploy a Continuous Integration workflow, we must create the directory:
+`.github/workflows` inside of our project.
+
+We can then create a `test.yml` file, that will contain the instructions to our tests.
