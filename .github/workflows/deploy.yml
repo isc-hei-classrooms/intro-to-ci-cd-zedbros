@@ -1,0 +1,10 @@
+name: Test CD dummyDB Push and Pull Request
+on: 
+    release
+jobs:
+    ci:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v6
+            - run: make
+            - run: make test

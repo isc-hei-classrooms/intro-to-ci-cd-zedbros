@@ -1,4 +1,4 @@
-name: Test dummyDB Push and Pull Request
+name: Test CI dummyDB Push and Pull Request
 
 on:
   push:
@@ -12,6 +12,6 @@ jobs:
   test:
     runs-on: ubuntu-latest # OS on which to run the code (ubuntu is the most common)
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - run: make
       - run: make test
